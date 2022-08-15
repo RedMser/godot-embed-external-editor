@@ -1,0 +1,5 @@
+{
+    "window.titleBarStyle": "native",
+    "window.titleSeparator": " - ",
+    "window.title": "${dirty}${activeEditorShort}${separator}${rootName}${separator}Visual Studio Code",
+}

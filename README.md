@@ -22,19 +22,23 @@ A GDExtension which allows embedding an external code editor such as Visual Stud
   - in Godot's editor settings, "Single-window mode" is **disabled** (otherwise dialogs will not appear in front of the code editor).
   - in Godot's editor settings, external code editor is enabled and correctly set up (double-clicking a script file in Godot's file explorer should open your editor of choice).
   - you follow [the setup instructions](#per-editor-setup) for the editor of your choice.
-- [Download the latest build artifact](https://nightly.link/RedMser/godot-embed-external-editor/workflows/build/master/godot-embed-external-editor_master.zip) or build from source.
-- Copy the `addons` folder into your project folder.
-- Restart the Godot editor (gdextensions are not live reloaded).
+- [Download and extract the latest build artifact](https://nightly.link/RedMser/godot-embed-external-editor/workflows/build/master/godot-embed-external-editor_master.zip) or compile from source.
+- Copy the `addons` folder into your game project folder.
+- If Godot was running, be sure to select "Project -> Reload Current Project" or restart the editor (gdextensions are not live reloaded).
 - Enable the plug-in in the project settings.
-- Open your code editor by double-clicking a file in Godot's explorer (unrelated code editors will NOT be embedded by this addon).
+- Open your code editor by double-clicking a script file in Godot's explorer (unrelated code editors will NOT be embedded by this addon) - it should disappear shortly after launching.
 - Switch to the Script tab and enjoy!
 
 ## Per-Editor Setup
 
 ### Visual Studio Code
 
-- In the settings, set `window.titleBarStyle` to `native`. Otherwise the titlebar can not be hidden and the editor window will be resizable independently from its container.
-- Unless you modified it manually, the `window.title` setting contains both the string `Visual Studio Code` and the name of the currently open folder `${rootName}`. This is needed in order for the addon to detect whether the instance has the project opened.
+Following settings changes can either be done in the user settings (Ctrl+Comma), or for each workspace folder:
+
+- Set `window.titleBarStyle` to `native`. Otherwise the titlebar can not be hidden and the editor window will be resizable independently from its container.
+- Ensure that the settings `window.title` and `window.titleSeparator` use their default values. Follow these instructions if you have modified them:
+  - The `window.title` setting must contain both the string `Visual Studio Code` and the name of the currently open folder `${rootName}`. This is needed in order for the addon to detect whether the instance has the project opened.
+  - Similarly, the `window.titleSeparator` needs leading and trailing whitespace to work correctly.
 
 # Limitations
 
@@ -43,7 +47,7 @@ This addon is very experimental and hacky. I'm trying to improve upon it, but th
 ## General
 
 - Godot still has problems detecting external script file changes (see [this PR](https://github.com/godotengine/godot/issues/49298)).
-  - **Workaround:** Restarting the editor with "Project -> Reload current project".
+  - **Workaround:** Restarting the editor with "Project -> Reload Current Project".
 - Can not view documentation in editor without detaching editor.
   - **Workaround:** You can use VSCode's "List native classes" option as an alternative.
 - There has been occasional freezes in the past which I've tried to fix. If they still persist, please [open an issue](https://github.com/redmser/godot-embed-external-editor/issues/new).
