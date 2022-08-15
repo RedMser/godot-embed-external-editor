@@ -22,7 +22,7 @@ A GDExtension which allows embedding an external code editor such as Visual Stud
   - in Godot's editor settings, "Single-window mode" is **disabled** (otherwise dialogs will not appear in front of the code editor).
   - in Godot's editor settings, external code editor is enabled and correctly set up (double-clicking a script file in Godot's file explorer should open your editor of choice).
   - you follow [the setup instructions](#per-editor-setup) for the editor of your choice.
-- [Download the latest release](https://github.com/redmser/godot-embed-external-editor/releases) or build from source.
+- [Download the latest build artifact](https://nightly.link/RedMser/godot-embed-external-editor/workflows/build/master/godot-embed-external-editor_master.zip) or build from source.
 - Copy the `addons` folder into your project folder.
 - Restart the Godot editor (gdextensions are not live reloaded).
 - Enable the plug-in in the project settings.
@@ -59,3 +59,15 @@ This addon is very experimental and hacky. I'm trying to improve upon it, but th
 - Until [this PR](https://github.com/godotengine/godot-vscode-plugin/pull/400) is finished and merged, debugging code is not possible.
 - Rarely, a black strip appears at the top of VSCode which offsets all input events
   - **Workaround:** Restart VSCode to fix this (sadly not even the "Reload Window" command solves this).
+
+# Contributing
+
+I don't plan on working on this project for more than my personal use-cases, so I would greatly appreciate help from others to improve upon this extension:
+
+- Support other OSes like Mac or Linux.
+- Support more editors, including documentation on how to set them up.
+- Fix usability issues and bugs.
+
+Create issues for ideas, feedback or bugs. Open pull requests if you implemented something. All help is appreciated! :)
+
+If you want to say thanks, then you can instead [donate on GitHub sponsors](https://github.com/RedMser/godot-embed-external-editor).
