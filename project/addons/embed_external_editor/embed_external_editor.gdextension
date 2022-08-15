@@ -1,0 +1,16 @@
+[configuration]
+
+entry_symbol = "gdextension_init"
+
+[libraries]
+
+macos.debug = "bin/libembed_external_editor.osx.debug.framework"
+macos.release = "bin/libembed_external_editor.osx.release.framework"
+windows.debug.x86_64 = "bin/libembed_external_editor.windows.debug.x86_64.dll"
+windows.release.x86_64 = "bin/libembed_external_editor.windows.release.x86_64.dll"
+linux.debug.x86_64 = "bin/libembed_external_editor.linux.debug.x86_64.so"
+linux.release.x86_64 = "bin/libembed_external_editor.linux.release.x86_64.so"
+linux.debug.arm64 = "bin/libembed_external_editor.linux.debug.arm64.so"
+linux.release.arm64 = "bin/libembed_external_editor.linux.release.arm64.so"
+linux.debug.rv64 = "bin/libembed_external_editor.linux.debug.rv64.so"
+linux.release.rv64 = "bin/libembed_external_editor.linux.release.rv64.so"

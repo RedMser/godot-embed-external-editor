@@ -1,0 +1,9 @@
+{
+    "files.exclude": {
+        "**/*.obj": true,
+        "**/__pycache__": true,
+    },
+    "search.exclude": {
+        "godot-cpp/": true,
+    },
+}
