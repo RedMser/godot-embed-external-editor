@@ -46,21 +46,23 @@ This addon is very experimental and hacky. I'm trying to improve upon it, but th
 
 ## General
 
-- Godot still has problems detecting external script file changes (see [this PR](https://github.com/godotengine/godot/issues/49298)).
-  - **Workaround:** Restarting the editor with "Project -> Reload Current Project".
+- Godot still has problems detecting external script file changes (see [this issue](https://github.com/godotengine/godot/issues/49298)).
+  - **Workaround:** Restart the editor with "Project -> Reload Current Project".
 - Can not view documentation in editor without detaching editor.
   - **Workaround:** You can use VSCode's "List native classes" option as an alternative.
 - There has been occasional freezes in the past which I've tried to fix. If they still persist, please [open an issue](https://github.com/redmser/godot-embed-external-editor/issues/new).
   - **Workaround:** If you get a freeze, it seems like Alt+Tab fixes it most of the time.
 - Editor's titlebar does not show after undocked.
   - **Workaround:** Minimize and restore the window.
+- The embedded window may get native window borders and be resizable at times (e.g. when the debugger breaks).
+  - **Workaround:** Undock and dock the window again.
 - Keyboard input will only be accepted by whichever window is in focus (e.g. F5 to run the game).
-  - **Workaround:** You must click on the window that should receive focus first.
+- Godot does not automatically switch to the script tab.
 - Hover thumbnails for scene tabs do not show in front of the embedded code editor.
 
 ## Visual Studio Code
 
-- Until [this PR](https://github.com/godotengine/godot-vscode-plugin/pull/400) is finished and merged, debugging code is not possible.
+- Until [this PR](https://github.com/godotengine/godot-vscode-plugin/pull/400) is finished and merged, debugging Godot games through VSCode is not possible.
 - Rarely, a black strip appears at the top of VSCode which offsets all input events
   - **Workaround:** Restart VSCode to fix this (sadly not even the "Reload Window" command solves this).
 
