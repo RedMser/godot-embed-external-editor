@@ -7,7 +7,7 @@ var base_control: Control
 
 func _ready():
 	flat = true
-	hint_tooltip = "Attach/Detach External Editor"
+	tooltip_text = "Attach/Detach External Editor"
 	toggle_mode = true
 	button_pressed = true
 	toggled.connect(_on_toggle)
