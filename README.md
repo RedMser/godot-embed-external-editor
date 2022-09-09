@@ -40,6 +40,11 @@ Following settings changes can either be done in the user settings (Ctrl+Comma),
   - The `window.title` setting must contain both the string `Visual Studio Code` and the name of the currently open folder `${rootName}`. This is needed in order for the addon to detect whether the instance has the project opened.
   - Similarly, the `window.titleSeparator` needs leading and trailing whitespace to work correctly.
 
+If you prefer using Visual Studio Code as a plain text editor without its IDE features, consider using Zen Mode:
+
+- Set `zenMode.centerLayout` to `false` and `zenMode.fullScreen` to `false`.
+- Enable Zen Mode by running the command `View: Toggle Zen Mode`.
+
 # Limitations
 
 This addon is very experimental and hacky. I'm trying to improve upon it, but there are some things that can not be fixed as easily:
