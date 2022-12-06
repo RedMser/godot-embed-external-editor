@@ -27,13 +27,14 @@ extension_name = Path(extension_path).stem
 #     print("Scons cache enabled... (path: '" + scons_cache_path + "')")
 
 # Create the library target (e.g. libembed-external-editor.linux.debug.x86_64.so).
+debug_or_release = "release" if env["target"] == "template_release" else "debug"
 if env["platform"] == "osx":
     library = env.SharedLibrary(
         "{}/bin/lib{}.{}.{}.framework/{1}.{2}.{3}".format(
             addon_path,
             extension_name,
             env["platform"],
-            env["target"],
+            debug_or_release,
         ),
         source=sources,
     )
@@ -43,8 +44,8 @@ else:
             addon_path,
             extension_name,
             env["platform"],
-            env["target"],
-            env["arch_suffix"],
+            debug_or_release,
+            env["arch"],
             env["SHLIBSUFFIX"],
         ),
         source=sources,

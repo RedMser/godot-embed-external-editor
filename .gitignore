@@ -2,6 +2,7 @@
 **/bin/
 *.obj
 *.o
+*.pdb
 
 # Objects.
 .scons-cache/
