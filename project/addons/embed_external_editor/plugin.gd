@@ -28,7 +28,7 @@ func _enter_tree():
 	)
 	toggle_button.visible = script_editor.visible
 
-	var tabs_hbox = script_editor.get_node(^"../../../").get_child(0)
+	var tabs_hbox = script_editor.get_node(^"../../../").get_child(0).get_child(0)
 	tabs_hbox.add_child(toggle_button)
 
 
