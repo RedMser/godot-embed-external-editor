@@ -24,7 +24,7 @@ A GDExtension which allows embedding an external code editor such as Visual Stud
   - you follow [the setup instructions](#per-editor-setup) for the editor of your choice.
 - [Download and extract the latest build artifact](https://nightly.link/RedMser/godot-embed-external-editor/workflows/build/master/godot-embed-external-editor_master.zip) or compile from source.
 - Copy the `addons` folder into your game project folder.
-- If Godot was running, be sure to select "Project -> Reload Current Project" or restart the editor (gdextensions are not live reloaded).
+- If Godot was running, be sure to select "Project -> Reload Current Project" or restart the editor (GDExtensions are not live reloaded, see [this issue](https://github.com/godotengine/godot/issues/66231)).
 - Enable the plug-in in the project settings.
 - Open your code editor by double-clicking a script file in Godot's explorer (unrelated code editors will NOT be embedded by this addon) - it should disappear shortly after launching.
 - Switch to the Script tab and enjoy!
@@ -51,7 +51,7 @@ This addon is very experimental and hacky. I'm trying to improve upon it, but th
 
 ## General
 
-- Godot still has problems detecting external script file changes (see [this issue](https://github.com/godotengine/godot/issues/49298)).
+- Godot still has problems detecting external script file changes (see [this issue](https://github.com/godotengine/godot/issues/69485)).
   - **Workaround:** Restart the editor with "Project -> Reload Current Project".
 - Can not view documentation in editor without detaching editor.
   - **Workaround:** You can use VSCode's "List native classes" option as an alternative.
