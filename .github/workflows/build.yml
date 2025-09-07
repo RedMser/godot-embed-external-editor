@@ -18,31 +18,31 @@ jobs:
 #          TODO: re-enable these builds once other OSes are supported by the extension.
 #          - identifier: linux-debug
 #            name: Linux Debug
-#            runner: ubuntu-20.04
+#            runner: ubuntu-latest
 #            target: template_debug
 #            platform: linux
 #            arch: x86_64
 #          - identifier: linux-release
 #            name: Linux Release
-#            runner: ubuntu-20.04
+#            runner: ubuntu-latest
 #            target: template_release
 #            platform: linux
 #            arch: x86_64
           - identifier: windows-debug
             name: Windows Debug
-            runner: ubuntu-20.04
+            runner: ubuntu-latest
             target: template_debug
             platform: windows
             arch: x86_64
           - identifier: windows-release
             name: Windows Release
-            runner: ubuntu-20.04
+            runner: ubuntu-latest
             target: template_release
             platform: windows
             arch: x86_64
 #          - identifier: android-release
 #            name: Android Release
-#            runner: ubuntu-20.04
+#            runner: ubuntu-latest
 #            target: template_release
 #            platform: android
 #            arch: arm64
@@ -63,7 +63,7 @@ jobs:
 #          sudo apt-get update
 
 #      - name: (Focal) Change package sources
-#        if: ${{ matrix.runner == 'ubuntu-20.04' }}
+#        if: ${{ matrix.runner == 'ubuntu-latest' }}
 #        shell: sh
 #        run: |
 #          sudo rm -f /etc/apt/sources.list.d/*
