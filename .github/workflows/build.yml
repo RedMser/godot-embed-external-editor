@@ -136,7 +136,7 @@ jobs:
 #          SCONS_CACHE: '${{ github.workspace }}/.scons-cache/'
 #          SCONS_CACHE_LIMIT: 8192
         run: |
-          scons target='${{ matrix.target }}' platform='${{ matrix.platform }}' arch='${{ matrix.arch }}' -j2
+          scons target='${{ matrix.target }}' platform='${{ matrix.platform }}' arch='${{ matrix.arch }}'
           ls -l project/addons/*/bin/
 
       - name: Copy extra files to addon
@@ -153,6 +153,15 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
+          name: ${{ github.event.repository.name }}_${{ steps.version.outputs.version }}_${{ matrix.identifier }}
+          path: |
+            ${{ github.workspace }}/project/
+  
+      - name: Download artifact
+        uses: actions/download-artifact@v4
+        with:
           name: ${{ github.event.repository.name }}_${{ steps.version.outputs.version }}
           path: |
             ${{ github.workspace }}/project/
+          pattern: ${{ github.event.repository.name }}*
+          merge-multiple: true
