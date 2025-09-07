@@ -153,6 +153,6 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: godot-embed-external-editor_${{ steps.version.outputs.version }}_${{ matrix.identifier }}
+          name: godot-embed-external-editor_${{ matrix.identifier }}_${{ github.sha }}
           path: |
             ${{ github.workspace }}/project/
