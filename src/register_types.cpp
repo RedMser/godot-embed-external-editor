@@ -1,7 +1,5 @@
 #include "register_types.h"
 
-#include <godot/gdnative_interface.h>
-
 #include <godot_cpp/core/class_db.hpp>
 #include <godot_cpp/core/defs.hpp>
 #include <godot_cpp/classes/engine.hpp>
@@ -35,9 +33,9 @@ void gdextension_terminate(ModuleInitializationLevel p_level)
 
 extern "C"
 {
-	GDNativeBool GDN_EXPORT gdextension_init(const GDNativeInterface *p_interface, const GDNativeExtensionClassLibraryPtr p_library, GDNativeInitialization *r_initialization)
+	GDExtensionBool GDE_EXPORT gdextension_init(GDExtensionInterfaceGetProcAddress p_get_proc_address, const GDExtensionClassLibraryPtr p_library, GDExtensionInitialization *r_initialization)
 	{
-		godot::GDExtensionBinding::InitObject init_obj(p_interface, p_library, r_initialization);
+		godot::GDExtensionBinding::InitObject init_obj(p_get_proc_address, p_library, r_initialization);
 
 		init_obj.register_initializer(gdextension_initialize);
 		init_obj.register_terminator(gdextension_terminate);
