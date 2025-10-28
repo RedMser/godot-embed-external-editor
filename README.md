@@ -8,28 +8,28 @@ A GDExtension which allows embedding an external code editor such as Visual Stud
 
 # Features
 
-- Automatically attach and detach external code editors.
-  - Checks if the code editor is relevant for the given project (e.g. the project folder is opened inside of it) whenever possible.
+- Automatically attach and detach external code editors into Godot editor.
   - A toggle button in the scene tab bar to manually attach and detach the external code editor.
-- Supported external editors:
-  - Only Visual Studio Code for now.
 
 # Quick Start
 
 - Ensure that
-  - you are using Godot 4.
-  - you are on Windows.
+  - you are using Godot 4.1 or later.
+  - you are using Windows.
   - in Godot's editor settings, "Single-window mode" is **disabled** (otherwise dialogs will not appear in front of the code editor).
-  - in Godot's editor settings, external code editor is enabled and correctly set up (double-clicking a script file in Godot's file explorer should open your editor of choice).
+  - in Godot's editor settings, external code editor is enabled and [correctly set up](https://docs.godotengine.org/en/stable/tutorials/editor/external_editor.html) (double-clicking a script file in Godot's file explorer should open your editor of choice).
   - you follow [the setup instructions](#per-editor-setup) for the editor of your choice.
 - [Download and extract the latest build artifact](https://nightly.link/RedMser/godot-embed-external-editor/workflows/build/master/godot-embed-external-editor_master.zip) or compile from source.
 - Copy the `addons` folder into your game project folder.
-- If Godot was running, be sure to select "Project -> Reload Current Project" or restart the editor (GDExtensions are not live reloaded, see [this issue](https://github.com/godotengine/godot/issues/66231)).
 - Enable the plug-in in the project settings.
-- Open your code editor by double-clicking a script file in Godot's explorer (unrelated code editors will NOT be embedded by this addon) - it should disappear shortly after launching.
+- Open a script file by double-clicking it in Godot's file browser.
 - Switch to the Script tab and enjoy!
 
 ## Per-Editor Setup
+
+Currently, following external editors are supported:
+
+- [Visual Studio Code](#visual-studio-code)
 
 ### Visual Studio Code
 
@@ -51,8 +51,6 @@ This addon is very experimental and hacky. I'm trying to improve upon it, but th
 
 ## General
 
-- Godot still has problems detecting external script file changes (see [this issue](https://github.com/godotengine/godot/issues/69485)).
-  - **Workaround:** Restart the editor with "Project -> Reload Current Project".
 - Can not view documentation in editor without detaching editor.
   - **Workaround:** You can use VSCode's "List native classes" option as an alternative.
 - There has been occasional freezes in the past which I've tried to fix. If they still persist, please [open an issue](https://github.com/redmser/godot-embed-external-editor/issues/new).
@@ -67,7 +65,6 @@ This addon is very experimental and hacky. I'm trying to improve upon it, but th
 
 ## Visual Studio Code
 
-- Until [this PR](https://github.com/godotengine/godot-vscode-plugin/pull/400) is finished and merged, debugging Godot games through VSCode is not possible.
 - Rarely, a black strip appears at the top of VSCode which offsets all input events
   - **Workaround:** Restart VSCode to fix this (sadly not even the "Reload Window" command solves this).
 
@@ -81,4 +78,4 @@ I don't plan on working on this project for more than my personal use-cases, so 
 
 Create issues for ideas, feedback or bugs. Open pull requests if you implemented something. All help is appreciated! :)
 
-If you want to say thanks, then you can instead [donate on GitHub sponsors](https://github.com/RedMser/godot-embed-external-editor).
+If you want to show your appreciation in another way, consider [donating on GitHub sponsors](https://github.com/RedMser/godot-embed-external-editor).
