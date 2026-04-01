@@ -31,6 +31,10 @@ func _enter_tree():
 	var tabs_hbox = script_editor.get_node(^"../../../").get_child(0).get_child(0)
 	tabs_hbox.add_child(toggle_button)
 
+func _handles(object: Object) -> bool:
+	if object is Script:
+		EditorInterface.set_main_screen_editor("Script")
+	return object is Script
 
 func _exit_tree():
 	embed_manager.free()
